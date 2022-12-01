@@ -1,17 +1,23 @@
 #day 1 2021 test code
 import sys
 import os
-myDir = os.getcwd()
-sys.path.append(myDir)
-from modules.fileParser import fileParser
 
-data = fileParser(0, "input.txt")
+def parse_data():
+    with open(os.path.join(sys.path[0], "input.txt"), "r") as f:
+        data = f.read()
+    return data
 
-count = 0
-prev = data[0]
-for cur in data[1:]:
-    if cur > prev:
-        count += 1
-    prev = cur
+def main():
+    task_1()
+    task_2()
 
-print(count)
+def task_1():
+    print(parse_data())
+    
+def task_2():
+    print(parse_data())
+
+main()
+
+
+
