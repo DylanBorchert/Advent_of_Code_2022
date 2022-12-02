@@ -3,8 +3,9 @@ import sys
 import os
 
 def parse_data():
-    with open(os.path.join(sys.path[0], "input.txt"), "r") as f:
+    with open(os.path.join(sys.path[0], "test.txt"), "r") as f:
         data = f.read()
+        f.close()
     return data
 
 def main():
