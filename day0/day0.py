@@ -8,17 +8,11 @@ def parse_data():
         f.close()
     return data
 
-def main():
-    task_1()
-    task_2()
-
 def task_1():
     print(parse_data())
     
 def task_2():
     print(parse_data())
 
-main()
-
-
-
+task_1()
+task_2()
