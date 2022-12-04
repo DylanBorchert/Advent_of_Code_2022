@@ -6,37 +6,27 @@ def parse_data():
     with open(os.path.join(sys.path[0], "input.txt"), "r") as f:
         data = f.read()
         f.close()
-    return data
+    return [[list(map(int, y.split("-"))) for y in x.split(",")] for x in data.split()]
 
 
 def task_1():
-    data = [x.split(",") for x in parse_data().split("\n")]
-    
+    data = parse_data()
     count = 0
-    for rng in data:
-            # Convert each range to a pair of integers
-            a = [int(x) for x in rng[0].split('-')]
-            b = [int(x) for x in rng[1].split('-')]
-            
-            # Check if one range fully contains the other
-            if (a[0] <= b[0] and a[1] >= b[1]) or (a[0] >= b[0] and a[1] <= b[1]):
-                count += 1
+    for i in data:
+        if(i[0][0] <= i[1][0] and i[0][1] >= i[1][1]) or (i[0][0] >= i[1][0] and i[0][1] <= i[1][1]):
+            count += 1
     print(count)
 
 
     
 def task_2():
-    data = [x.split(",") for x in parse_data().split("\n")]
+    data = parse_data()
     
     count = 0
-    for rng in data:
-            # Convert each range to a pair of integers
-            a = [int(x) for x in rng[0].split('-')]
-            b = [int(x) for x in rng[1].split('-')]
-            
-            # Check if one range fully contains the other
-            if a[0] <= b[1] and a[1] >= b[0]:
-                count += 1
+    for i in data:
+        if i[0][0] <= i[1][1] and i[0][1] >= i[1][0]:
+            count += 1
+                
     print(count)
     
 
