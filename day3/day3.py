@@ -39,8 +39,6 @@ def task_2():
             if char in second and char in third:
                 sum += letters.index(char)+1
                 break;
-                
-            
     print(sum)
 
 task_1()

@@ -2,10 +2,6 @@
 import sys
 import os
 
-def main():
-    task_1()
-    task_2()
-
 def get_data():
     with open(os.path.join(sys.path[0], "input.txt"), "r") as f:
         data = f.read()
@@ -17,6 +13,5 @@ def task_1():
 def task_2():
     print(sum(sorted([sum(x) for x in get_data()], reverse=True)[:3]))
 
-main()
-
-    
+task_1()
+task_2()
